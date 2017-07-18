@@ -44,11 +44,18 @@ let myChord = [{
 }];
 ```
 
+
+
 Finally you could send this to the component: (this is just an example, actually it'd sound really bad...)
 
 ```
 <Ukelele chord={myChord}/>
 ```
+### Demo
+1. Go to the `/demo` folder
+2. Run npm install
+3. Run `webpack-dev-server` to start the server or just run `webpack -w` to create the `bundle.js`.
+
 
 ### Credits
 Jordi Llobet | @newpatriks
