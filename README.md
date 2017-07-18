@@ -41,7 +41,7 @@ let myChord = [{
     fret: 2,
     fingerId: 1
 },{
-    string: [2],
+    string: [3],
     fret: 3,
     fingerId: 2
 }];
