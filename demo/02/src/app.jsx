@@ -18,20 +18,17 @@ class App extends React.Component {
         });
     }
     render() {
-        let dropDownOptions = [];
+        let ukeleleList = [];
         let keys = Object.keys(CHORDS);
         for (let key in CHORDS) {
             if (CHORDS.hasOwnProperty(key)) {
-                dropDownOptions.push(<option id={key} value={key}>{key}</option>);
+                ukeleleList.push(<Ukelele key={key} chord={key} width="400" height="200"/>);
             }
         }
 
         return(
             <div>
-                <select onChange={this.handleChange}>
-                    {dropDownOptions.map(option => (option))}
-                </select>
-                <Ukelele chord={this.state.currentChord}/>
+                {ukeleleList.map(ukelele => (ukelele))}
             </div>
         );
     }
