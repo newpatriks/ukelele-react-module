@@ -1,102 +1,105 @@
 export interface Finger {
-  string: number[]
+  /** 1-based string numbers pressed by this finger */
+  strings: number[]
+  /** 1-based fret number */
   fret: number
-  fingerId: number
+  /** Optional identifier — used for React keys when passing custom chords */
+  fingerId?: number
 }
 
 export type ChordMap = Record<string, Finger[]>
 
 const CHORDS: ChordMap = {
   'A': [
-    { string: [3], fret: 1, fingerId: 1 },
-    { string: [4], fret: 2, fingerId: 2 },
+    { strings: [3], fret: 1 },
+    { strings: [4], fret: 2 },
   ],
   'Am': [
-    { string: [4], fret: 2, fingerId: 1 },
+    { strings: [4], fret: 2 },
   ],
   'A7': [
-    { string: [3], fret: 1, fingerId: 1 },
+    { strings: [3], fret: 1 },
   ],
   'B': [
-    { string: [1, 2], fret: 2, fingerId: 1 },
-    { string: [3], fret: 3, fingerId: 2 },
-    { string: [4], fret: 4, fingerId: 3 },
+    { strings: [1, 2], fret: 2 },
+    { strings: [3], fret: 3 },
+    { strings: [4], fret: 4 },
   ],
   'Bm': [
-    { string: [1, 2, 3], fret: 2, fingerId: 1 },
-    { string: [4], fret: 4, fingerId: 3 },
+    { strings: [1, 2, 3], fret: 2 },
+    { strings: [4], fret: 4 },
   ],
   'B7': [
-    { string: [1, 2, 4], fret: 2, fingerId: 1 },
-    { string: [3], fret: 3, fingerId: 2 },
+    { strings: [1, 2, 4], fret: 2 },
+    { strings: [3], fret: 3 },
   ],
   'C': [
-    { string: [1], fret: 3, fingerId: 1 },
+    { strings: [1], fret: 3 },
   ],
   'Cm': [
-    { string: [1, 2, 3], fret: 3, fingerId: 1 },
+    { strings: [1, 2, 3], fret: 3 },
   ],
   'C7': [
-    { string: [1], fret: 1, fingerId: 1 },
+    { strings: [1], fret: 1 },
   ],
   'D': [
-    { string: [2], fret: 2, fingerId: 1 },
-    { string: [3], fret: 2, fingerId: 2 },
-    { string: [4], fret: 2, fingerId: 3 },
+    { strings: [2], fret: 2 },
+    { strings: [3], fret: 2 },
+    { strings: [4], fret: 2 },
   ],
   'Dm': [
-    { string: [2], fret: 1, fingerId: 1 },
-    { string: [4], fret: 2, fingerId: 2 },
-    { string: [3], fret: 2, fingerId: 3 },
+    { strings: [2], fret: 1 },
+    { strings: [4], fret: 2 },
+    { strings: [3], fret: 2 },
   ],
   'D7': [
-    { string: [2, 3, 4], fret: 2, fingerId: 1 },
-    { string: [1], fret: 3, fingerId: 3 },
+    { strings: [2, 3, 4], fret: 2 },
+    { strings: [1], fret: 3 },
   ],
   'E': [
-    { string: [4], fret: 1, fingerId: 1 },
-    { string: [1], fret: 2, fingerId: 2 },
-    { string: [3], fret: 4, fingerId: 4 },
+    { strings: [4], fret: 1 },
+    { strings: [1], fret: 2 },
+    { strings: [3], fret: 4 },
   ],
   'Em': [
-    { string: [1], fret: 2, fingerId: 1 },
-    { string: [2], fret: 3, fingerId: 2 },
-    { string: [3], fret: 4, fingerId: 4 },
+    { strings: [1], fret: 2 },
+    { strings: [2], fret: 3 },
+    { strings: [3], fret: 4 },
   ],
   'E7': [
-    { string: [4], fret: 1, fingerId: 1 },
-    { string: [3], fret: 2, fingerId: 2 },
-    { string: [1], fret: 2, fingerId: 3 },
+    { strings: [4], fret: 1 },
+    { strings: [3], fret: 2 },
+    { strings: [1], fret: 2 },
   ],
   'F': [
-    { string: [2], fret: 1, fingerId: 1 },
-    { string: [4], fret: 2, fingerId: 2 },
+    { strings: [2], fret: 1 },
+    { strings: [4], fret: 2 },
   ],
   'Fm': [
-    { string: [2], fret: 1, fingerId: 1 },
-    { string: [4], fret: 1, fingerId: 2 },
-    { string: [1], fret: 3, fingerId: 4 },
+    { strings: [2], fret: 1 },
+    { strings: [4], fret: 1 },
+    { strings: [1], fret: 3 },
   ],
   'F7': [
-    { string: [2], fret: 1, fingerId: 1 },
-    { string: [4], fret: 2, fingerId: 2 },
-    { string: [3], fret: 3, fingerId: 3 },
-    { string: [1], fret: 3, fingerId: 4 },
+    { strings: [2], fret: 1 },
+    { strings: [4], fret: 2 },
+    { strings: [3], fret: 3 },
+    { strings: [1], fret: 3 },
   ],
   'G': [
-    { string: [1], fret: 2, fingerId: 1 },
-    { string: [3], fret: 2, fingerId: 2 },
-    { string: [2], fret: 3, fingerId: 3 },
+    { strings: [1], fret: 2 },
+    { strings: [3], fret: 2 },
+    { strings: [2], fret: 3 },
   ],
   'Gm': [
-    { string: [1], fret: 1, fingerId: 1 },
-    { string: [3], fret: 2, fingerId: 2 },
-    { string: [2], fret: 3, fingerId: 3 },
+    { strings: [1], fret: 1 },
+    { strings: [3], fret: 2 },
+    { strings: [2], fret: 3 },
   ],
   'G7': [
-    { string: [2], fret: 1, fingerId: 1 },
-    { string: [3], fret: 2, fingerId: 2 },
-    { string: [1], fret: 2, fingerId: 3 },
+    { strings: [2], fret: 1 },
+    { strings: [3], fret: 2 },
+    { strings: [1], fret: 2 },
   ],
 }
 

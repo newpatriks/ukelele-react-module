@@ -2,12 +2,15 @@ import React from 'react'
 import CHORDS, { type Finger } from './ukelele-chords.ts'
 
 export interface UkeleleProps {
+  /** Named chord (e.g. "Am") or a custom array of finger positions */
   chord: string | Finger[]
-  width: number
-  height: number
+  /** SVG width in pixels. Defaults to 400 */
+  width?: number
+  /** SVG height in pixels. Defaults to 200 */
+  height?: number
 }
 
-function Ukelele({ chord, width, height }: UkeleleProps) {
+export function Ukelele({ chord, width = 400, height = 200 }: UkeleleProps) {
   const fretWidth = width / 5
   const stringHeight = height / 2
   const verticalOffset = 50
@@ -36,12 +39,12 @@ function Ukelele({ chord, width, height }: UkeleleProps) {
 
   const circleComponents: React.ReactElement[] = []
   if (chordSchema) {
-    chordSchema.forEach((finger) => {
-      finger.string.forEach((string, index) => {
-        const chordKey = typeof chord === 'string' ? chord : 'custom'
+    chordSchema.forEach((finger, fingerIndex) => {
+      finger.strings.forEach((string, stringIndex) => {
+        const keyId = finger.fingerId ?? fingerIndex
         circleComponents.push(
           <circle
-            key={`${chordKey}_${finger.fingerId}_${index}`}
+            key={`${keyId}_${stringIndex}`}
             cx={fretWidth / 2 + fretWidth * (finger.fret - 1) + headStockOffset}
             cy={stringYPosition[string - 1]}
             r={circleRadius}
