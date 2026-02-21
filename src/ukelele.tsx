@@ -1,5 +1,5 @@
 import React from 'react'
-import CHORDS, { type Finger } from './ukelele-chords.ts'
+import CHORDS, { type Finger } from './ukelele-chords'
 
 export interface UkeleleProps {
   /** Named chord (e.g. "Am") or a custom array of finger positions */
