@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A React component that renders a ukulele chord diagram as SVG.",
   "type": "module",
-  "main": "src/ukelele.jsx",
+  "main": "src/index.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,9 +15,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
