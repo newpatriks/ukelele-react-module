@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import CHORDS from './ukelele-chords.js'
 
 class Ukelele extends React.Component {
