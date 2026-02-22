@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Ukelele, CHORDS } from '../src/index.ts'
+import { Ukelele, CHORDS } from '../src/index'
 
 type View = 'selector' | 'all'
 
